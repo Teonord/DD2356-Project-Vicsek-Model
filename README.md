@@ -13,7 +13,7 @@ $$\theta_i(t + \Delta t) = \langle \theta(t)\rangle_r + \Delta \theta$$
 More information can be found in the Project Report. 
 
 ## Documentation
-Doxygen with auto deployment has been setup in this repository. The documentation for this repository is available at [https://Teonord.github.io/DD2356-Project-Vicsek-Model/](https://Teonord.github.io/DD2356-Project-Vicsek-Model/)
+Doxygen pages have been setup in this repository. The documentation for this repository is available at [https://Teonord.github.io/DD2356-Project-Vicsek-Model/](https://Teonord.github.io/DD2356-Project-Vicsek-Model/)
 
 ## Files
 - **proj_serial.c**
