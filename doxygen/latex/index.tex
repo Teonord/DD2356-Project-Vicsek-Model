@@ -1,0 +1,275 @@
+\label{index_md_README_doxygen}%
+\Hypertarget{index_md_README_doxygen}%
+Project (graded, 3.\+0 credits) in the course DD2356 Methods in High Performance Computing (7.\+5 credits). Project goal is to make a parallelized implementations of the Vicsek Model using Open\+MP and MPI, and comparing these with a serial verison.
+
+The implemented Vicsek model is on the form
+
+\[\mathbf{x}_i(t+\Delta t)=\mathbf{x}_i(t) + \mathbf{v}_i(t)\Delta t\]
+
+where the velocity \[\mathbf{v}_i(t)\] is of magnitude \[v_0\] and with angle \[\theta_i\] calculated through
+
+\[\theta_i(t + \Delta t) = \langle \theta(t)\rangle_r + \Delta \theta\]
+
+More information can be found in the Project Report.\hypertarget{index_autotoc_md1}{}\doxysection{Files}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__serial_8c}{proj\+\_\+serial.\+c}}}}
+\begin{DoxyItemize}
+\item Contains serial implementation of the Vicsek model.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__omp_8c}{proj\+\_\+omp.\+c}}}}
+\begin{DoxyItemize}
+\item Contains Open\+MP threaded implementation of the Vicsek model.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__mpi_8c}{proj\+\_\+mpi.\+c}}}}
+\begin{DoxyItemize}
+\item Contains MPI implementation of the Vicsek model.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__mpi__omp_8c}{proj\+\_\+mpi\+\_\+omp.\+c}}}}
+\begin{DoxyItemize}
+\item Contains MPI implementation of the Vicsek model with Open\+MP threading capabilities.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}}}}
+\begin{DoxyItemize}
+\item Contains all functions and constants (parameters) neccessary to all of the different implementations of the Vicsek model.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{proj__tests_8c}{proj\+\_\+tests.\+c}}}}
+\begin{DoxyItemize}
+\item Contains tests for all the functions defined in \mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}}
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{plotter_8py}{plotter.\+py}}}}
+\begin{DoxyItemize}
+\item Python Matplotlib Quiver plotter for the results from the C code.
+\end{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{verification__values_8py}{verification\+\_\+values.\+py}}}}
+\begin{DoxyItemize}
+\item Used to verify that all result values are the same when parameter VERIF is set to 1. Used to see that all of the different implementations of the code are consistent.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Running Locally}\label{index_autotoc_md2}
+This assumes you are running {\bfseries{Ubuntu}} for local computer.
+
+Clone the project
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/Teonord/DD2356-\/Project-\/Vicsek-\/Model}
+
+\end{DoxyCode}
+
+
+Go to the project directory
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd DD2365-\/Project-\/Vicsek-\/Model}
+
+\end{DoxyCode}
+
+
+Change parameters like number of birds and timestep in {\bfseries{\mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}}}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{emacs proj\_common.h}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{Non MPI Implementations}\label{index_autotoc_md3}
+Compile the files
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cc -\/o <filename>.out <filename>.c -\/fopenmp -\/lm}
+
+\end{DoxyCode}
+
+
+Set amount of Open\+MP threads (if needed)
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export OMP\_NUM\_THREADS=<threads>}
+
+\end{DoxyCode}
+
+
+Run code
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./<filename>.out > res}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{For MPI Implementations}\label{index_autotoc_md4}
+Install MPICH
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install mpich}
+
+\end{DoxyCode}
+
+
+Compile the files
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mpicc -\/o <filename>.out <filename>.c -\/fopenmp -\/lm}
+
+\end{DoxyCode}
+
+
+Set amount of Open\+MP threads (if needed)
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export OMP\_NUM\_THREADS=<threads>}
+
+\end{DoxyCode}
+
+
+Run code with number of processes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mpiexec -\/n <processes> ./<filename>.out > res}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md5}{}\doxysection{Running on Dardel}\label{index_autotoc_md5}
+Follow guide in Running Locally to download and set up code.
+
+Copy code to Dardel
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{scp <DD2365-\/Project-\/Vicsek-\/Model> <username>@dardel.pdc.kth.se:Private/.}
+
+\end{DoxyCode}
+
+
+After entering Dardel and moving to proper folder, compile code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cc -\/o <filename>.out <filename>.c -\/fopenmp -\/lm}
+
+\end{DoxyCode}
+
+
+Create Job Script for running code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{touch <filename>.sh}
+\DoxyCodeLine{emacs <filename>.sh}
+
+\end{DoxyCode}
+
+
+Enter information neccessary for your batched run of the code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#!/bin/bash -\/l}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/A <allocation\_code>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/J <filename>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/p main}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/n <n>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/-\/nodes=<n>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/-\/ntasks-\/per-\/node=<n>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/-\/cpus-\/per-\/task=<n>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#SBATCH -\/t 00:05:00}
+\DoxyCodeLine{}
+\DoxyCodeLine{export OMP\_NUM\_THREADS=<threads>}
+\DoxyCodeLine{export OMP\_PLACES=cores}
+\DoxyCodeLine{}
+\DoxyCodeLine{srun ./<filename>.out > ./Results/res\_<filename>}
+
+\end{DoxyCode}
+
+
+Save and exit using Ctrl-\/x, Ctrl-\/c, y, Enter.
+
+Run the batched Job and wait for run to be completed.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sbatch <filename>.sh}
+
+\end{DoxyCode}
+
+
+To check progress, you can check the queue.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{squeue -\/u <username>}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysection{Visualization}\label{index_autotoc_md6}
+This assumes that you have at least Python 3 installed
+
+To visualize the code, take the results file and place it next to the \mbox{\hyperlink{plotter_8py}{plotter.\+py}} file. Change the \char`\"{}filename\char`\"{} variable to the name of the results file.
+
+Install neccessary modules
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip install matplotlib numpy}
+
+\end{DoxyCode}
+
+
+Run code
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python ./plotter.py}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md7}{}\doxysection{Testing}\label{index_autotoc_md7}
+There are two tests of the code.\hypertarget{index_autotoc_md8}{}\doxysubsection{Unit Testing}\label{index_autotoc_md8}
+To run unit testing of the code, follow the \href{\#run-locally}{\texttt{ Run Locally}} section to compile the {\bfseries{\mbox{\hyperlink{proj__tests_8c}{proj\+\_\+tests.\+c}}}} file
+
+Run the file
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./proj\_tests.out}
+
+\end{DoxyCode}
+
+
+If output is all zeroes, code has passed the tests. If non-\/zero, look through the code to see what test hasn\textquotesingle{}t been passed. Make sure that VERIF in {\bfseries{proj\+\_\+commons.\+h}} is set to 0 when running unit testing.\hypertarget{index_autotoc_md9}{}\doxysubsection{Result Verification}\label{index_autotoc_md9}
+To run result verification, first set VERIF to 1 in {\bfseries{proj\+\_\+commons.\+h}}. Do not change any other parameters. This will disable randomness and create a deterministic setup and effects for all functions. Next, follow \href{\#run-locally}{\texttt{ Run Locally}} to run the {\bfseries{\mbox{\hyperlink{proj__serial_8c}{proj\+\_\+serial.\+c}}}} code and at least one other file you wish to verify. Put the resulting files in the folder with {\bfseries{\mbox{\hyperlink{verification__values_8py}{verification\+\_\+values.\+py}}}}. Open {\bfseries{\mbox{\hyperlink{verification__values_8py}{verification\+\_\+values.\+py}}}} and set \char`\"{}filename1\char`\"{} and \char`\"{}filename2\char`\"{} to the names of the result files.
+
+Install neccessary modules
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip install numpy}
+
+\end{DoxyCode}
+
+
+Run code
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python ./verification\_values.py}
+
+\end{DoxyCode}
+
+
+Output should have one line with text. An otherwise empty file means verification was passed. Any more lines means something was problematic. If so, make sure that VERIF is set to 1. \hypertarget{index_autotoc_md10}{}\doxysection{Authors}\label{index_autotoc_md10}
+
+\begin{DoxyItemize}
+\item \href{https://www.github.com/Teonord}{\texttt{ @\+Teonord}} 
+\end{DoxyItemize}

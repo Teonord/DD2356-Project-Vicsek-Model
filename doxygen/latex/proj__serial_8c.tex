@@ -1,0 +1,76 @@
+\hypertarget{proj__serial_8c}{}\doxysection{proj\+\_\+serial.\+c File Reference}
+\label{proj__serial_8c}\index{proj\_serial.c@{proj\_serial.c}}
+{\ttfamily \#include \char`\"{}proj\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+Include dependency graph for proj\+\_\+serial.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{proj__serial_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{proj__serial_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main}} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function of the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{proj__serial_8c_abf9e6b7e6f15df4b525a2e7705ba3089}\label{proj__serial_8c_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{proj\_serial.c@{proj\_serial.c}!main@{main}}
+\index{main@{main}!proj\_serial.c@{proj\_serial.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function of the simulation. 
+
+This function performs the entire simulation loop for the Vicsek model of Flocking Birds in a serial manner. Using functions in \mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}} the model is solved and results are printed in one line per timestep. The resulting values can then be pasted into the Python program to visualize the flock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. Unused. \\
+\hline
+{\em argv} & Array of command-\/line argument strings. Unused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 upon successful completion. 
+\end{DoxyReturn}
+$<$ Reusable pointer to a bird struct.
+
+$<$ Loop counters.
+
+$<$ Interaction radius squared, used in Pythagorean theorem.
+
+$<$ Print simulation parameters.
+
+$<$ Seed the random number generator.
+
+$<$ Allocate memory for bird structs.
+
+$<$ Record start time of simulation.
+
+$<$ Initialize birds.
+
+$<$ Main simulation loop.
+
+$<$ Update positions of all birds.
+
+$<$ Calculate angle effects for all birds.
+
+$<$ Update angles of all birds.
+
+$<$ Print position and velocity of each bird.
+
+$<$ Print newline after each time step.
+
+$<$ Print total simulation time.
+
+$<$ Free memory allocated for bird structs.
+
+$<$ Return 0 to indicate successful completion.

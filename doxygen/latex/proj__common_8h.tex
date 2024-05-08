@@ -1,0 +1,270 @@
+\hypertarget{proj__common_8h}{}\doxysection{proj\+\_\+common.\+h File Reference}
+\label{proj__common_8h}\index{proj\_common.h@{proj\_common.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for proj\+\_\+common.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{proj__common_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj__common_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBird}{Bird}}
+\begin{DoxyCompactList}\small\item\em Struct to represent a bird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_a1bb678d8f64ab3e184184c736ccd786b}{VERIF}}~0
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979323846
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_ac8a07e20d5408f2dd08737f7937ce8bf}{TIMESTEPS}}~200
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_abc544a4ed22112e62773c113652c5063}{NUMBER}}~500
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_ad350bae49f72ba58d73027f1316e38b8}{SEED}}~621
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_a2074b9a2c1c6a3190319241fd96ebdd5}{V0}}~1.\+0
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_af77edc1f833593caecfc032dcc5953a6}{ETA}}~0.\+5
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}{L}}~10.\+0
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_a6393cf65712d26b6719220af207a1ddd}{R\+\_\+\+INIT}}~1.\+0
+\item 
+\#define \mbox{\hyperlink{proj__common_8h_a943f07034774ef1261d62cd0d3d1fec9}{DT}}~0.\+2
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{proj__common_8h_a851218cff1b4077e6e123ef777bff9e1}{randd}} ()
+\begin{DoxyCompactList}\small\item\em Generates and returns a random double-\/precision float in range \mbox{[}0.\+0, 1.\+0\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{proj__common_8h_a04018aef88b348e767bd78cefd4f03ab}{modd}} (double val, double modulo)
+\begin{DoxyCompactList}\small\item\em Performs a modulo operation that works in the proper way for negative values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{proj__common_8h_a47ce5c9d55942c563cbb4582b3391d42}{init\+Bird}} (struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Initializes the position and velocity of a bird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{proj__common_8h_ae67929e3f5f427a0eef26840da850e18}{update\+Bird\+Pos}} (struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Updates the position of a bird based on its velocity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{proj__common_8h_a0b738157e176cc6a196cbd0e4d4ec2c1}{calculate\+Angle\+Effects}} (struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b, struct \mbox{\hyperlink{structBird}{Bird}} $\ast$birds, double R)
+\begin{DoxyCompactList}\small\item\em Calculates the effects of neighboring birds on the current bird\textquotesingle{}s angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{proj__common_8h_a73ae24b3de225865eee89e5c1ef61ba5}{update\+Bird\+Angle}} (struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Updates the angle of a bird based on the effects of neighboring birds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{proj__common_8h_a943f07034774ef1261d62cd0d3d1fec9}\label{proj__common_8h_a943f07034774ef1261d62cd0d3d1fec9}} 
+\index{proj\_common.h@{proj\_common.h}!DT@{DT}}
+\index{DT@{DT}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{DT}{DT}}
+{\footnotesize\ttfamily \#define DT~0.\+2}
+
+\mbox{\Hypertarget{proj__common_8h_af77edc1f833593caecfc032dcc5953a6}\label{proj__common_8h_af77edc1f833593caecfc032dcc5953a6}} 
+\index{proj\_common.h@{proj\_common.h}!ETA@{ETA}}
+\index{ETA@{ETA}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{ETA}{ETA}}
+{\footnotesize\ttfamily \#define ETA~0.\+5}
+
+\mbox{\Hypertarget{proj__common_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}\label{proj__common_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}} 
+\index{proj\_common.h@{proj\_common.h}!L@{L}}
+\index{L@{L}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{L}{L}}
+{\footnotesize\ttfamily \#define L~10.\+0}
+
+\mbox{\Hypertarget{proj__common_8h_abc544a4ed22112e62773c113652c5063}\label{proj__common_8h_abc544a4ed22112e62773c113652c5063}} 
+\index{proj\_common.h@{proj\_common.h}!NUMBER@{NUMBER}}
+\index{NUMBER@{NUMBER}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER}{NUMBER}}
+{\footnotesize\ttfamily \#define NUMBER~500}
+
+\mbox{\Hypertarget{proj__common_8h_a598a3330b3c21701223ee0ca14316eca}\label{proj__common_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{proj\_common.h@{proj\_common.h}!PI@{PI}}
+\index{PI@{PI}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+14159265358979323846}
+
+\mbox{\Hypertarget{proj__common_8h_a6393cf65712d26b6719220af207a1ddd}\label{proj__common_8h_a6393cf65712d26b6719220af207a1ddd}} 
+\index{proj\_common.h@{proj\_common.h}!R\_INIT@{R\_INIT}}
+\index{R\_INIT@{R\_INIT}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{R\_INIT}{R\_INIT}}
+{\footnotesize\ttfamily \#define R\+\_\+\+INIT~1.\+0}
+
+\mbox{\Hypertarget{proj__common_8h_ad350bae49f72ba58d73027f1316e38b8}\label{proj__common_8h_ad350bae49f72ba58d73027f1316e38b8}} 
+\index{proj\_common.h@{proj\_common.h}!SEED@{SEED}}
+\index{SEED@{SEED}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{SEED}{SEED}}
+{\footnotesize\ttfamily \#define SEED~621}
+
+\mbox{\Hypertarget{proj__common_8h_ac8a07e20d5408f2dd08737f7937ce8bf}\label{proj__common_8h_ac8a07e20d5408f2dd08737f7937ce8bf}} 
+\index{proj\_common.h@{proj\_common.h}!TIMESTEPS@{TIMESTEPS}}
+\index{TIMESTEPS@{TIMESTEPS}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{TIMESTEPS}{TIMESTEPS}}
+{\footnotesize\ttfamily \#define TIMESTEPS~200}
+
+\mbox{\Hypertarget{proj__common_8h_a2074b9a2c1c6a3190319241fd96ebdd5}\label{proj__common_8h_a2074b9a2c1c6a3190319241fd96ebdd5}} 
+\index{proj\_common.h@{proj\_common.h}!V0@{V0}}
+\index{V0@{V0}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{V0}{V0}}
+{\footnotesize\ttfamily \#define V0~1.\+0}
+
+\mbox{\Hypertarget{proj__common_8h_a1bb678d8f64ab3e184184c736ccd786b}\label{proj__common_8h_a1bb678d8f64ab3e184184c736ccd786b}} 
+\index{proj\_common.h@{proj\_common.h}!VERIF@{VERIF}}
+\index{VERIF@{VERIF}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{VERIF}{VERIF}}
+{\footnotesize\ttfamily \#define VERIF~0}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{proj__common_8h_a0b738157e176cc6a196cbd0e4d4ec2c1}\label{proj__common_8h_a0b738157e176cc6a196cbd0e4d4ec2c1}} 
+\index{proj\_common.h@{proj\_common.h}!calculateAngleEffects@{calculateAngleEffects}}
+\index{calculateAngleEffects@{calculateAngleEffects}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{calculateAngleEffects()}{calculateAngleEffects()}}
+{\footnotesize\ttfamily void calculate\+Angle\+Effects (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b,  }\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{birds,  }\item[{double}]{R }\end{DoxyParamCaption})}
+
+
+
+Calculates the effects of neighboring birds on the current bird\textquotesingle{}s angle. 
+
+This function calculates the effects of neighboring birds within a certain radius (R) on the angle of the current bird. It updates the sum of sines (sy) and cosines (sx) of the angles of neighboring birds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to the bird struct to update its angle effects. \\
+\hline
+{\em birds} & Array of all birds in the simulation. \\
+\hline
+{\em R} & Pre-\/squared radius within which neighboring birds are considered. \\
+\hline
+\end{DoxyParams}
+$<$ Pointer to a neighboring bird.
+
+$<$ Check if bird is within squared radius R.
+
+$<$ Update sum of cosines.
+
+$<$ Update sum of sines.\mbox{\Hypertarget{proj__common_8h_a47ce5c9d55942c563cbb4582b3391d42}\label{proj__common_8h_a47ce5c9d55942c563cbb4582b3391d42}} 
+\index{proj\_common.h@{proj\_common.h}!initBird@{initBird}}
+\index{initBird@{initBird}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{initBird()}{initBird()}}
+{\footnotesize\ttfamily void init\+Bird (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Initializes the position and velocity of a bird. 
+
+This function initializes the position and velocity of a bird struct. If in verification mode, it sets the position based on predefined arrays. Otherwise, it sets random positions and angles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to the bird struct to be initialized. \\
+\hline
+\end{DoxyParams}
+$<$ Random initial x position within a range.
+
+$<$ Random initial y position within a range.
+
+$<$ Random initial angle within 0 to 2$\ast$\+PI.
+
+$<$ Initial velocity along x direction.
+
+$<$ Initial velocity along y direction.\mbox{\Hypertarget{proj__common_8h_a04018aef88b348e767bd78cefd4f03ab}\label{proj__common_8h_a04018aef88b348e767bd78cefd4f03ab}} 
+\index{proj\_common.h@{proj\_common.h}!modd@{modd}}
+\index{modd@{modd}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{modd()}{modd()}}
+{\footnotesize\ttfamily double modd (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{double}]{modulo }\end{DoxyParamCaption})}
+
+
+
+Performs a modulo operation that works in the proper way for negative values. 
+
+The double modulo function \char`\"{}fmod()\char`\"{} from $<$math.\+h$>$ returns negative values if input value is negative fmod(-\/1, 3) = -\/1 We want a modulo that instead returns the positive modulo of a value. ourmod(-\/1, 3) = 2 This is done by adding the value of modulo to the value returned by fmod.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Numerator double-\/precision float value to get remainder from. \\
+\hline
+{\em modulo} & Denominator double-\/precision float value to get remainder from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A positive modulo value. 
+\end{DoxyReturn}
+$<$ Return positive modulo if value is negative.
+
+$<$ Return standard modulo if value is positive.\mbox{\Hypertarget{proj__common_8h_a851218cff1b4077e6e123ef777bff9e1}\label{proj__common_8h_a851218cff1b4077e6e123ef777bff9e1}} 
+\index{proj\_common.h@{proj\_common.h}!randd@{randd}}
+\index{randd@{randd}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{randd()}{randd()}}
+{\footnotesize\ttfamily double randd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates and returns a random double-\/precision float in range \mbox{[}0.\+0, 1.\+0\mbox{]}. 
+
+Function uses the function rand() from $<$stdlib.\+h$>$ to generate a random integer value between 0 and RAND\+\_\+\+MAX. This value is then cast to a double-\/precision float and divided by RAND\+\_\+\+MAX to get a random value between 0 and 1. Values used in numerous positions in the code. If in verification mode, always return a value of 0.\+55.
+
+\begin{DoxyReturn}{Returns}
+Random double-\/precision float in range \mbox{[}0.\+0, 1.\+0\mbox{]} 
+\end{DoxyReturn}
+$<$ Generate and return a value in range \mbox{[}0.\+0, 1.\+0\mbox{]}\mbox{\Hypertarget{proj__common_8h_a73ae24b3de225865eee89e5c1ef61ba5}\label{proj__common_8h_a73ae24b3de225865eee89e5c1ef61ba5}} 
+\index{proj\_common.h@{proj\_common.h}!updateBirdAngle@{updateBirdAngle}}
+\index{updateBirdAngle@{updateBirdAngle}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{updateBirdAngle()}{updateBirdAngle()}}
+{\footnotesize\ttfamily void update\+Bird\+Angle (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Updates the angle of a bird based on the effects of neighboring birds. 
+
+This function updates the angle of a bird struct based on the sum of sines (sy) and cosines (sx) of the angles of neighboring birds, with added random perturbation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to the bird struct to update its angle. \\
+\hline
+\end{DoxyParams}
+$<$ Update angle with noise.
+
+$<$ Reset sum of cosines.
+
+$<$ Reset sum of sines.
+
+$<$ Update x component of velocity based on new angle.
+
+$<$ Update y component of velocity based on new angle.\mbox{\Hypertarget{proj__common_8h_ae67929e3f5f427a0eef26840da850e18}\label{proj__common_8h_ae67929e3f5f427a0eef26840da850e18}} 
+\index{proj\_common.h@{proj\_common.h}!updateBirdPos@{updateBirdPos}}
+\index{updateBirdPos@{updateBirdPos}!proj\_common.h@{proj\_common.h}}
+\doxysubsubsection{\texorpdfstring{updateBirdPos()}{updateBirdPos()}}
+{\footnotesize\ttfamily void update\+Bird\+Pos (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Updates the position of a bird based on its velocity. 
+
+This function updates the position of a bird struct based on its current velocity and the time step (DT).
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to the bird struct to update its position. \\
+\hline
+\end{DoxyParams}
+$<$ Update x position based on velocity.
+
+$<$ Update y position based on velocity.
+
+$<$ Apply periodic boundary conditions for x position.
+
+$<$ Apply periodic boundary conditions for y position.

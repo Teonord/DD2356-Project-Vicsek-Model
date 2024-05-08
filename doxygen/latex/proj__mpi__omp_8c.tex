@@ -1,0 +1,98 @@
+\hypertarget{proj__mpi__omp_8c}{}\doxysection{proj\+\_\+mpi\+\_\+omp.\+c File Reference}
+\label{proj__mpi__omp_8c}\index{proj\_mpi\_omp.c@{proj\_mpi\_omp.c}}
+{\ttfamily \#include \char`\"{}proj\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$mpi.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for proj\+\_\+mpi\+\_\+omp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj__mpi__omp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{proj__mpi__omp_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function of the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{proj__mpi__omp_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{proj__mpi__omp_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{proj\_mpi\_omp.c@{proj\_mpi\_omp.c}!main@{main}}
+\index{main@{main}!proj\_mpi\_omp.c@{proj\_mpi\_omp.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function of the simulation. 
+
+This function performs the entire simulation loop for the Vicsek model of Flocking Birds using MPI Processes and Open\+MP Threads. Using functions in \mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}} the model is solved and results are printed in one line per timestep. The resulting values can then be pasted into the Python program to visualize the flock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. Unused. \\
+\hline
+{\em argv} & Array of command-\/line argument strings. Unused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 upon successful completion. 
+\end{DoxyReturn}
+$<$ Loop counters and MPI variables.
+
+$<$ Reusable pointer to a bird struct.
+
+$<$ Interaction radius squared, used in Pythagorean theorem.
+
+$<$ Initialize MPI with single thread support.
+
+$<$ Get the total number of processes.
+
+$<$ Get the rank of the current process.
+
+$<$ Calculate the number of birds per process.
+
+$<$ Calculate the starting index for birds for this process.
+
+$<$ Seed the random number generator with a unique seed for each process.
+
+$<$ Allocate memory for all birds.
+
+$<$ Allocate memory for birds of this process.
+
+$<$ Record start time of simulation.
+
+$<$ Initialize birds only on process 0.
+
+$<$ Broadcast all bird data to all processes.
+
+$<$ Copy the birds for this process.
+
+$<$ Main simulation loop.
+
+$<$ Update positions of all birds for this process in parallel.
+
+$<$ Gather all birds\textquotesingle{} data.
+
+$<$ Calculate angle effects for all birds for this process in parallel.
+
+$<$ Update angles of all birds for this process in parallel.
+
+$<$ Gather all birds\textquotesingle{} data to process 0.
+
+$<$ Print positions and velocities of all birds.
+
+$<$ Print total simulation time on process 0.
+
+$<$ Finalize MPI.
+
+$<$ Free memory allocated for all birds.
+
+$<$ Free memory allocated for birds of this process.
+
+$<$ Return 0 to indicate successful completion.

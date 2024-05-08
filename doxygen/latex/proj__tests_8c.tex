@@ -1,0 +1,158 @@
+\hypertarget{proj__tests_8c}{}\doxysection{proj\+\_\+tests.\+c File Reference}
+\label{proj__tests_8c}\index{proj\_tests.c@{proj\_tests.c}}
+{\ttfamily \#include \char`\"{}proj\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$mpi.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for proj\+\_\+tests.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj__tests_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{proj__tests_8c_a83719c2107c590c59196fc7c5f0bea9f}{same\+Birds}} (struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b1, struct \mbox{\hyperlink{structBird}{Bird}} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em Compares two bird structures for equality. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_a0094b5c9124d471580416008e7a40f38}{test\+Randd}} ()
+\begin{DoxyCompactList}\small\item\em Tests the randd function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_aa6a328aeae77156cc95a1ac174d2ff7c}{test\+Modd}} ()
+\begin{DoxyCompactList}\small\item\em Tests the modd function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_a67510ead2a8a632def9beaffd78293ba}{test\+Init\+Bird}} ()
+\begin{DoxyCompactList}\small\item\em Tests the init\+Bird function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_a7b1b1625a37fae27b8056ff9e7421496}{test\+Update\+Bird\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Tests the update\+Bird\+Pos function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_a9d43af246a4bf9350d9c3d17550772b7}{test\+Calculate\+Angle\+Effects}} ()
+\begin{DoxyCompactList}\small\item\em Tests the calculate\+Angle\+Effects function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_ad71c2bc318e015f782bb2a1fca1f6b18}{test\+Update\+Bird\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Tests the update\+Bird\+Angle function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj__tests_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main}} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function to run all tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{proj__tests_8c_abf9e6b7e6f15df4b525a2e7705ba3089}\label{proj__tests_8c_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{proj\_tests.c@{proj\_tests.c}!main@{main}}
+\index{main@{main}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function to run all tests. 
+
+Function is run to test all of the functions in the \mbox{\hyperlink{proj__common_8h}{proj\+\_\+common.\+h}} header file. If all functions work properly, each line should have a 0. If any line is non-\/zero, then something is wrong with the respective function. The non-\/zero value tells which test-\/case from the given function that failed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. Unused. \\
+\hline
+{\em argv} & Command-\/line arguments array. Unused. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on successful run, regardless of test results. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_a83719c2107c590c59196fc7c5f0bea9f}\label{proj__tests_8c_a83719c2107c590c59196fc7c5f0bea9f}} 
+\index{proj\_tests.c@{proj\_tests.c}!sameBirds@{sameBirds}}
+\index{sameBirds@{sameBirds}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{sameBirds()}{sameBirds()}}
+{\footnotesize\ttfamily bool same\+Birds (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b1,  }\item[{struct \mbox{\hyperlink{structBird}{Bird}} $\ast$}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Compares two bird structures for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & Pointer to the first bird structure. \\
+\hline
+{\em b2} & Pointer to the second bird structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the bird structures are the same, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_a9d43af246a4bf9350d9c3d17550772b7}\label{proj__tests_8c_a9d43af246a4bf9350d9c3d17550772b7}} 
+\index{proj\_tests.c@{proj\_tests.c}!testCalculateAngleEffects@{testCalculateAngleEffects}}
+\index{testCalculateAngleEffects@{testCalculateAngleEffects}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testCalculateAngleEffects()}{testCalculateAngleEffects()}}
+{\footnotesize\ttfamily int test\+Calculate\+Angle\+Effects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the calculate\+Angle\+Effects function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_a67510ead2a8a632def9beaffd78293ba}\label{proj__tests_8c_a67510ead2a8a632def9beaffd78293ba}} 
+\index{proj\_tests.c@{proj\_tests.c}!testInitBird@{testInitBird}}
+\index{testInitBird@{testInitBird}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testInitBird()}{testInitBird()}}
+{\footnotesize\ttfamily int test\+Init\+Bird (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the init\+Bird function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_aa6a328aeae77156cc95a1ac174d2ff7c}\label{proj__tests_8c_aa6a328aeae77156cc95a1ac174d2ff7c}} 
+\index{proj\_tests.c@{proj\_tests.c}!testModd@{testModd}}
+\index{testModd@{testModd}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testModd()}{testModd()}}
+{\footnotesize\ttfamily int test\+Modd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the modd function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_a0094b5c9124d471580416008e7a40f38}\label{proj__tests_8c_a0094b5c9124d471580416008e7a40f38}} 
+\index{proj\_tests.c@{proj\_tests.c}!testRandd@{testRandd}}
+\index{testRandd@{testRandd}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testRandd()}{testRandd()}}
+{\footnotesize\ttfamily int test\+Randd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the randd function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_ad71c2bc318e015f782bb2a1fca1f6b18}\label{proj__tests_8c_ad71c2bc318e015f782bb2a1fca1f6b18}} 
+\index{proj\_tests.c@{proj\_tests.c}!testUpdateBirdAngle@{testUpdateBirdAngle}}
+\index{testUpdateBirdAngle@{testUpdateBirdAngle}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testUpdateBirdAngle()}{testUpdateBirdAngle()}}
+{\footnotesize\ttfamily int test\+Update\+Bird\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the update\+Bird\+Angle function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{proj__tests_8c_a7b1b1625a37fae27b8056ff9e7421496}\label{proj__tests_8c_a7b1b1625a37fae27b8056ff9e7421496}} 
+\index{proj\_tests.c@{proj\_tests.c}!testUpdateBirdPos@{testUpdateBirdPos}}
+\index{testUpdateBirdPos@{testUpdateBirdPos}!proj\_tests.c@{proj\_tests.c}}
+\doxysubsubsection{\texorpdfstring{testUpdateBirdPos()}{testUpdateBirdPos()}}
+{\footnotesize\ttfamily int test\+Update\+Bird\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests the update\+Bird\+Pos function. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if the tests pass, otherwise returns a non-\/zero value indicating the failure code. 
+\end{DoxyReturn}
